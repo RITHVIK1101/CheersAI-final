@@ -1,0 +1,106 @@
+
+.product_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product_title {
+    font-size: 45px;
+    font-weight: 600;
+    background: var(--gradient-text);
+    /* Clip the background to the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Set transparent text color */
+    color: transparent;    
+    font-family: var(--font-family);
+    margin-bottom: 20px;
+
+  }
+  .product_title_explaination{
+    text-align: center;
+    color: #c3c5d0;
+    font-family: var(--font-family);
+    font-size: 18px;
+    width: 700px;
+    line-height: 30px;
+  }
+  .first_product_info {
+    display: flex; /* Use flexbox to align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Add space between items */
+    padding-top: 75px;
+    gap: 150px
+  }
+  
+  .first_product_title{
+    color: white;
+    font-family: var(--font-family);
+    font-size: 32px;
+
+  }
+  .first_product_description{
+    color: #c3c5d0;
+    font-family: var(--font-family);
+    font-size: 18px;
+    width: 500px;
+    padding-top: 18px;
+    line-height: 30px;
+  }
+  .first_product_info_words {
+    flex: 1; /* Allow the words container to grow and take available space */
+  }
+  
+  .first_product_image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+  }
+  .image_box, .image_box_two{
+    background-size: cover; 
+    background-position: center; /* Center the background image */
+    width: 564px; 
+    height: 480px; 
+    border: 0.5px solid #ffffff; 
+    border-radius: 20px;
+  }
+  .image_box{
+    background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/659f0dfab4977240fb063498_advanced-analytics-default-v1-image-techfy-x-webflow-template.png');
+
+  }
+  .image_box_two{
+    background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/659f0dfb0bd559122e3e45ab_live-reports-default-v1-image-techfy-x-webflow-template.png');
+  }
+
+  .first_product_description_bulletPoints{
+    align-items: column;
+  }
+  .first_product_description_bulletPoints_row {
+    display: flex; /* Ensures the items inside align according to flexbox rules */
+    gap: 10px;
+    margin-top: 20px;
+    align-items: flex-start; /* Align items to the top of the container */
+
+  }
+  .first_product_description_bulletPoints_text{
+    color: white;
+    font-family: var(--font-family);
+
+  }
+
+  .first_product_description_bulletPoints_text h {
+    font-size: 18px; /* Adjust the font size of the heading */
+    color: #ffffff; /* Set the color of the heading */
+  }
+  
+  .first_product_description_bulletPoints_text p {
+    padding-top: 8px;
+    font-size: 18px; /* Adjust the font size of the paragraph */
+    color: #c3c5d0; /* Set the color of the paragraph */
+    width: 400px;
+  }
+ 
+  

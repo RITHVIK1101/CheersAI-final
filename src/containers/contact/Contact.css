@@ -1,0 +1,238 @@
+.contact__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+}
+
+.contact__heading{
+    font-family: var(--font-family);
+    color: white;
+    font-size: 65px;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact__subHeading{
+    padding-top: 20px;
+    font-family: var(--font-family);
+    color: var(--color-subtext);
+    font-size: 18px;
+    width: 600px;
+    line-height: 1.5;
+    padding-bottom: 40px;
+
+}
+.contact__info__box {
+    position: relative;
+    background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/65a188488d6949f8b0d197dc_bg-container-v22-image-techfy-x-webflow-template.png');
+    background-size: cover;
+    background-position: center;
+    width: 1250px;
+    height: 650px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(40, 43, 51);
+}
+
+.contact__info__box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: rgba(40, 43, 51);
+}
+
+.left-cover {
+    padding-top: 4.5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact_firstRow_info,
+.contact_secondRow_info,
+.contact_ThirdRow_info {
+    display: flex;
+    gap: 50px;
+}
+
+.contact_firstRow_info p,
+.contact_secondRow_info p,
+.contact_ThirdRow_info p {
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    text-align: left; 
+
+}
+
+.contact_firstRow_info input,
+.contact_secondRow_info input,
+.contact_ThirdRow_info input {
+    width: 250px;
+    margin-bottom: 20px;
+    height: 60px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(19, 22, 38);
+    border: 1px solid rgba(40, 43, 51, 1);
+    font-size: 18px;
+    color: white;
+
+}
+
+.contact_firstRow_info_message textarea {
+    width: 550px; /* You can adjust the width here to make it different */
+    height: 200px; /* Adjust the height as desired */
+    padding: 20px;
+    background-color: rgb(19, 22, 38);
+    border: 1px solid rgba(40, 43, 51, 1);
+    resize: none; /* Prevent resizing of the textarea */
+    vertical-align: top; /* Align text to the top */
+    font-family: var(--font-family); /* Apply the same font-family as other elements */
+    font-size: 16px; /* Apply the same font-size as other elements */
+    color: white; /* Apply the same color as other elements */
+    border-radius: 10px;
+}
+
+.contact_firstRow_info_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  background-color: rgb(19, 22, 38);
+  border-radius: 10px;
+  width: 150.42px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0px 2px 1px rgba(255, 255, 255, 0.3); /* Add box shadow */
+
+}
+.contact_ForthRow_info {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin-top: 20px; /* Add margin to create space between the button and the other inputs */
+    margin-right: 65%; /* Adjust margin-left to position the button away from the left side */
+    cursor: pointer;
+}
+
+.right_cover {
+    padding-top: 4.5%; /* Adjust padding-top as needed */
+    position: absolute;
+    top: 0;
+    right: 0; /* Change left to right */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    padding-left: 2.5%;
+    flex-direction: column;
+    text-align: left; /* Align text to the left */
+
+}
+
+.right_cover p{
+    font-family: var(--font-family);
+}
+.right_cover_title{
+    padding-top: 50px;
+
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+
+}
+.right_cover_paragraph{
+    padding-top: 20px;
+    font-size: 18px;
+    color: var(--color-subtext);
+    line-height: 1.5;
+    width: 500px;
+}
+.right_cover_line {
+    width: 80%; /* Adjust the width as needed */
+    margin-top: 30px; /* Add space between the paragraph and the line */
+    border: none; /* Remove the default border */
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Add a border to create the line */
+}
+
+
+.right_cover_pointOne, .right_cover_pointTwo, .right_cover_pointThree {
+    padding-top: 50px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.right_cover_pointOne img, .right_cover_pointTwo img, .right_cover_pointThree img {
+    margin-right: 20px; /* Add space between the image and text */
+}
+
+.right_cover_point_text {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+.bulletpoint_title{
+    color: white;
+}
+.bulletpoint_link{
+    color: var(--color-subtext);
+}
+
+.left-cover_checkmark{
+    width: 75px;
+}
+
+.left-cover_done_title{
+    padding-top: 20px;
+    font-family: var(--font-family);
+    color: white;
+    font-size: 24px;
+    padding-bottom: 20px;
+
+}
+.left-cover_done_subparagraph{
+    font-family: var(--font-family);
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+
+}
+.left-cover_done_subparagraph_two{
+    font-family: var(--font-family);
+    color: white;
+    font-size: 18px;
+
+}
+
+
+.left-cover_done_message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Added to center horizontally */
+    flex-direction: column;
+}

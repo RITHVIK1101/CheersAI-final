@@ -1,0 +1,93 @@
+/* Navbar container styling */
+.navbar__container {
+    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
+    color: #fff; /* Text color set to white */
+    height: 100vh; /* Make the navbar take the full height of the viewport */
+}
+
+
+
+/* Header row styling to align button and logo */
+.header-row {
+    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Adjust padding as needed */
+}
+
+/* Logo container styling */
+.logo__container {
+    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 0 10px; /* Adjust padding as needed */
+}
+
+/* Logo specific styling */
+.logo-con {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+/* Menu bar styling */
+.menu-bar {
+    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1rem;
+    position: relative;
+    color: white;
+}
+
+/* Additional styling for menu items to ensure text color is white */
+.menu-bar .ant-menu-item, 
+.menu-bar .ant-menu-submenu-title {
+    color: #fff; /* Set text color to white */
+}
+
+/* Additional styling for menu icons to ensure they inherit the correct color */
+.menu-bar .ant-menu-item .anticon, 
+.menu-bar .ant-menu-submenu-title .anticon {
+    color: #fff; /* Set icon color to white */
+}
+
+/* Custom styling for selected menu item */
+.menu-bar .ant-menu-item-selected {
+    color: #6c72ff; /* Set text color for selected item */
+    background-color: transparent !important; 
+}
+
+/* Custom styling for selected menu item icons */
+.menu-bar .ant-menu-item-selected .anticon {
+    color: #6c72ff; /* Set icon color for selected item */
+}
+
+/* Toggle button styling */
+.toggle-theme-button {
+    position: relative;
+    padding-top: 100%;
+    left: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Icon color for dark theme */
+.dark-icon {
+    color: #fff; /* White color for dark theme */
+}
+
+/* Additional toggle button styling */
+.toggle {
+    margin-left: 15px;
+    color: #fff; /* Ensure the toggle button text is white */
+}

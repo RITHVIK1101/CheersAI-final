@@ -1,0 +1,142 @@
+.Uses__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 200px;
+}
+
+.Uses_format {
+    text-align: center;
+}
+
+.uses_format_title {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 45px;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+.uses_format_subtitle {
+    padding-top: 20px;
+    background: var(--color-subtext);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 18px;
+    font-family: var(--font-family);
+    width: 600px;
+    line-height: 1.5;
+}
+
+.uses_options {
+    font-family: var(--font-family);
+    font-size: 18px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    color: white;
+}
+
+.uses_options > div {
+    position: relative;
+    cursor: pointer; 
+    color: rgb(173, 176, 187); /* Default color for unselected options */
+
+}
+.uses_options > div.selected {
+    color: white; /* Color for the selected option */
+}
+
+.uses_options > div.selected::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -41px;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    z-index: 1; /* Ensure the blue line appears on top */
+}
+
+.uses_line {
+    width: 65%;
+    height: 0.1px;
+    background-color: rgb(173, 176, 187, 0.4);
+    margin: 40px auto;
+    z-index: 0; /* Set a lower z-index to ensure it's below the blue line */
+}
+
+.uses_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+}
+.uses_content_information{
+    font-family: var(--font-family);
+    gap: 100px;
+}
+.uses_content_title {
+    gap: 10px;
+    display: flex;
+    align-items: center; /* Center the items vertically */
+    font-size: 26px;
+    color: white;
+    font-family: var(--font-family);
+    padding-bottom: 20px;
+
+}
+
+.uses_content_paragraph {
+    font-size: 18px;
+    color: rgb(173, 176, 187);
+    width: 600px;
+    font-family: var(--font-family);
+    line-height: 1.5;
+    padding-bottom: 40px;
+
+}
+
+.uses_content_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  background-color: rgba(21, 29, 52, 0.8);
+  border-radius: 10px;
+  width: 150.42px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 10;
+}
+
+.uses__box__image {
+    width: 500px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+.uses_content_information {
+    display: flex;
+    align-items: center;
+}
+
+.uses_content.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.uses_content.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+

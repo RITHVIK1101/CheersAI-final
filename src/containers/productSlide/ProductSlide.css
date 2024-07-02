@@ -1,0 +1,140 @@
+/* testimonials.css */
+
+.testimonials__container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center horizontally */
+    padding-bottom: 200px;
+}
+
+.analytics__tool {
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 20px; /* Add some space between the text and the slider */
+    background-color: #000111;
+
+   
+}
+.analytics__tool h2{
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-family);
+    font-size: 45px;
+}
+.analytics__tool p{
+    padding-top: 20px;
+    color: rgb(173, 176, 187);
+    font-family: var(--font-family);
+    font-size: 18px;
+    width: 650px;
+    line-height: 30px;
+}
+
+.slider__container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial__cards {
+    color: white;
+    max-width: 70%; /* Increase the max-width of the cards container */
+    padding-top: 50px;
+
+}
+
+.testimonial__card__designs {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/659f1c622447d151aff1c386_bg-container-v10-image-techfy-x-webflow-template-p-1600.png');
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+    border: 1px solid #ffffff; /* Set border width and color */
+}
+
+.testimonial__card__one {
+  color: white;
+  padding: 4rem; /* Increase the padding for the cards */
+  align-items: center;
+  display: flex; /* Use flexbox for layout */
+  border-radius: 15px;
+  font-family: var(--font-family);
+  height: 550px; /* Set height */
+}
+.testimonial__card__content_text {
+    padding-top: 15px;
+    font-size: 32px; /* Adjust the font size for the text */
+  }
+  
+  .testimonial__card__content_paragraph {
+    font-size: 18px; /* Adjust the font size for the paragraph */
+    color: rgb(173, 176, 187);
+    padding-top: 15px;
+    line-height: 1.7; /* Add spacing between lines */
+  }
+   
+.testimonial__card__content{
+    padding-left: 80px;
+    font-family: var(--font-family);
+}
+
+.testimonial__card__one h3,
+.testimonial__card__one h4 {
+    overflow: hidden; /* Hide overflowed text */
+    white-space: normal; /* Allow text to wrap */
+    margin: 0; /* Reset margin to avoid spacing issues */
+
+}
+.testimonial__card__one h3 {
+    font-size: 1.5rem; /* Increase the font size for the quote */
+
+}
+.testimonial__card__one h4 {
+    font-size: 1.2rem; /* Increase the font size for the quote */
+
+}
+
+
+.testimonial__card__one h4 {
+    margin-top: 1rem; /* Adjust the margin-top value as needed */
+}
+
+.slick-dots li.slick-active button:before {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+/* Styles for inactive dot */
+.slick-dots li button:before {
+    color: rgb(250, 250, 253);
+    font-size: 12px;
+}
+
+.slick-slide:not(.slick-center) {
+    opacity: 0.3; /* Adjust the opacity of the non-centered slides */
+    transition: opacity 0.3s ease; /* Apply transition for smooth fade effect */
+  }
+  
+  .slick-dots {
+    position: relative; /* Set position to relative for easier positioning */
+}
+
+/* Optional: Adjust position of dots container */
+.slick-dots {
+    bottom: -30px; /* Adjust position as needed */
+}
+
+
+  .testimonial__image {
+    width: 500px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between image and stars */
+}
+
+/* Spread out the arrow buttons */
+
+

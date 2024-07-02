@@ -1,0 +1,144 @@
+.chatpage__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 95vh;
+  position: relative;
+  overflow: hidden;
+  padding-left: 20px; /* Assuming your navbar is on the left */
+}
+
+.center__boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 300px;
+}
+
+.box {
+  width: 200px;
+  height: 120px;
+  background-color: rgb(243, 233, 233);
+  display: flex;
+  flex-direction: column;
+  color: rgb(144, 147, 154);
+  font-size: 16px;
+  border-radius: 15px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 15px;
+  padding: 15px;
+  font-family: 'Switzer', sans-serif;
+  line-height: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  background-color: rgb(193, 200, 209);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heart__icon {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.messages__container {
+  margin-top: 20px; /* Adjust margin-top to create space between navbar and messages */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align messages to the left side */
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-left: 300px; /* Optional: Add padding-left for additional spacing */
+  padding-bottom: 75px;
+}
+
+.message {
+  background-color: rgb(19, 162, 263);
+  color: rgb(198, 209, 232);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  max-width: 50%;
+  word-wrap: break-word;
+  font-family: 'Switzer', sans-serif;
+}
+
+.user-message {
+  align-self: flex-start;
+
+}
+
+.bot-message {
+  align-self: flex-end;
+  margin-right: 300px; /* Adjust margin-right to create gap between bot message and alignment */
+  background-color: rgb(126, 144, 169);
+
+}
+
+.chat__interface__container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.chatbox__interface {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.chatbox__border {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(227, 227, 227);
+  width: 60%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.chatbox__design {
+  background-color: rgb(227, 227, 227);
+  flex-grow: 1;
+  height: 40px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+}
+
+.chatbox__design:focus {
+  background-color: rgb(48, 57, 71);
+  outline: none;
+}
+
+.chatbox__phone__icon,
+.chatbox__circle__two {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.chatbox__phone__icon {
+  background-image: url('../../assets/phone.png');
+}
+
+.chatbox__circle__two {
+  background-color: rgb(177, 184, 196);
+  background-image: url('../../assets/arrow.png');
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.chatbox__circle__two:hover {
+  background-color: rgb(110, 126, 148);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

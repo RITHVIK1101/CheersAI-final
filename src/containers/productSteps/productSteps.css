@@ -1,0 +1,151 @@
+.productSteps__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: var(--font-family);
+    padding-top: 12rem;
+}
+
+.productSteps__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: -160px; /* Adjust as needed */
+    max-width: 768px; /* Limit the width of the content */
+}
+
+.productSteps__image_content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    gap: 40px;
+}
+
+
+.productSteps__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: -160px; /* Add this line */
+
+}
+
+.productSteps{
+    width: 85%;
+    max-width: 768px;
+    color: white;
+}
+.productSteps .productSteps{
+    padding-top: 2rem;
+    border-bottom: 0.1px solid rgba(255, 255, 255, .2); /* Add this line */
+    padding-bottom: 3rem;
+}
+
+
+.productSteps .productSteps .productSteps-question {
+    display: flex; /* Add this line */
+    align-items: center; /* Add this line */
+    position: relative;
+    font-size: 26px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    font-family: var(--font-family);
+}
+
+
+.productSteps .productSteps .productSteps-question::after {
+    content: '';    
+    width: 55px;
+    height: 55px;
+    background-color: rgb(10, 19, 43, 0.8); /* Color of the square */
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    margin-left: auto;
+    position: relative; /* Add this line */
+}
+
+.productSteps .productSteps .productSteps-question::after::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thickness of the line */
+    background-color: white; /* Color of the line */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.productSteps .productSteps .productSteps-answer{
+    opacity: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.4s ease;
+    font-size: 18px;
+    color: var(--color-subtext);
+}
+
+.productSteps .productSteps.open .productSteps-question{
+    margin-bottom: 15px;
+}
+
+
+.productSteps .productSteps.open .productSteps-answer {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.productSteps__title {
+    font-size: 45px;
+    font-weight: 600;
+    background: var(--gradient-text);
+    /* Clip the background to the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Set transparent text color */
+    color: transparent;
+}
+
+.productSteps_summery{
+    font-size: 18px;
+    color: var(--color-subtext);
+    width: 580px;
+    line-height: 30px;
+    padding-bottom: 80px;
+
+}
+
+.productSteps__image_box{
+    background-size: cover; 
+    background-position: center; 
+    width: 620px; 
+    height: 630px; 
+    border: 0.5px solid #ffffff; 
+    border-radius: 20px;
+    background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/659ecfad9d3770281cc418f4_create-your-account-image-techfy-x-webflow-template.png');
+}
+
+.productSteps__getStarted_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  background-color: rgba(21, 29, 52, 0.8);
+  border-radius: 10px;
+  width: 150.42px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 10;
+}
+.productSteps__image_content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 40px;
+}

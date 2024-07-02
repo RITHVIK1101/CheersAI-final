@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Switzer:wght@400;500;700&display=swap');
+
+.header__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://assets-global.website-files.com/659c0cccfa86ae185af5a32a/659f0395f399e11f0e98ff52_bg-container-v8-image-techfy-x-webflow-template.png');
+  background-size: cover;
+  background-position: center;
+  height: 1426px;
+  padding-bottom: 270px;
+
+}
+
+
+.header__container {
+  margin-left: 100px; /* Add margin-left instead */
+  display: flex;
+  flex-direction: row;
+  margin-right: -8rem;
+  overflow: hidden; 
+}
+.header__text__container {
+  display: flex;
+  justify-content: center;
+}
+
+.header__text {
+  padding-top: 3rem;
+  padding-left: 13rem;
+}
+.header__website__image{
+  padding-left: 3rem;
+}
+.header__description {
+  color: white;
+  font-family: var(--font-family);
+}
+.header__explanation{
+  width: 580px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgb(173, 176, 187);
+  line-height: 2;
+
+}
+
+.button__container{
+  display: flex;
+  align-items: column;
+  gap: 20px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  background-color: rgba(21, 29, 52, 0.8);
+  border-radius: 10px;
+  width: 150.42px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 10;
+
+}
+.button_two{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color: white;
+  border: 1px solid white; /* Add border and set color to white */
+  background-color: black;
+  border-radius: 10px;
+  width: 150.42px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 10;
+}
+
+
+.button > div {
+  margin-bottom: 1rem;
+}
+
+
+
+.header__title {
+  font-family: var(--font-family);
+  font-size: 45px;
+  font-weight: 600; /* Adjust the font weight here */
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  
+}
+
+.line {
+  width: 100%;
+  height: 1.2px; /* Adjust the thickness of the line */
+  background-color: rgba(255, 255, 255, 0.2); /* Change the color of the line */
+  margin: 30px 0; /* Adjust the spacing around the line */
+}
+
+.header__brands__title {
+  color: white;
+  font-size: 19px;
+  font-family: var(--font-family);
+  font-weight: bold;
+}
+.header__logos {
+  margin-top: 30px; /* Add padding to create a gap between the logos and the top */
+  display: flex; /* Set display to flex */
+  flex-direction: column; /* Arrange logos in a column */
+  justify-content: space-between; 
+  gap: 50px;
+  width: 100px; 
+
+}
+.header__logos__row__one, .header__logos__row__two {
+  display: flex;
+  gap: 100px;
+
+}
+.header__logos img {
+  width: 150px; /* Set a specific width for all logos */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
