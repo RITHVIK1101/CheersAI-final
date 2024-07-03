@@ -3,37 +3,7 @@
     background-color: rgb(16, 35, 119); /* Specific color for the navbar */
     color: #fff; /* Text color set to white */
     height: 100vh; /* Make the navbar take the full height of the viewport */
-}
-
-
-
-/* Header row styling to align button and logo */
-.header-row {
-    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
-    display: flex;
-    align-items: center;
-    padding: 10px; /* Adjust padding as needed */
-}
-
-/* Logo container styling */
-.logo__container {
-    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    padding: 0 10px; /* Adjust padding as needed */
-}
-
-/* Logo specific styling */
-.logo-con {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    border-radius: 50%;
+    transition: width 0.3s; /* Smooth transition for the width */
 }
 
 /* Menu bar styling */
@@ -90,4 +60,72 @@
 .toggle {
     margin-left: 15px;
     color: #fff; /* Ensure the toggle button text is white */
+}
+
+/* Styling for the collapsed state */
+.navbar__container.collapsed {
+    width: 80px; /* Adjust width as needed */
+}
+
+.navbar__container.collapsed .ant-menu-item .anticon,
+.navbar__container.collapsed .ant-menu-submenu-title .anticon {
+    display: block; /* Show icons when collapsed */
+}
+
+.navbar__container.collapsed .ant-menu-item .ant-menu-title-content,
+.navbar__container.collapsed .ant-menu-submenu-title .ant-menu-title-content {
+    display: none; /* Hide text when collapsed */
+}
+
+.navbar__container:hover {
+    width: 300px; /* Expand width on hover */
+}
+
+.logo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.logo-expanded {
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+}
+
+.logo-text {
+    font-family: 'YourChosenFont', sans-serif; /* Use your chosen font */
+    font-size: 24px;
+    color: white;
+    padding-top: 30px;
+}
+
+.navbar__container.collapsed .logo__container {
+    margin-top: 50px; /* Adjust this value to move the heart icon down */
+}
+
+.menu-bar .ant-menu-item:hover .ant-menu-title-content, 
+.menu-bar .ant-menu-submenu-title:hover .ant-menu-title-content {
+    background-color: white; /* Change the background color on hover */
+    border-radius: 15px; /* Curved corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
+    padding: 10px; /* Optional: Add padding to center the text */
+}
+
+/* Custom styling for selected menu item in collapsed state */
+.navbar__container.collapsed .ant-menu-item-selected,
+.navbar__container.collapsed .ant-menu-submenu-title-selected {
+    background-color: white; /* White background for selected item */
+    border-radius: 8px; /* Rounded corners */
+    margin: 0 8px; /* Margin to adjust the spacing */
+    display: flex; /* Flexbox to center icon */
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
+}
+
+.navbar__container.collapsed .ant-menu-item-selected .anticon,
+.navbar__container.collapsed .ant-menu-submenu-title-selected .anticon {
+    color: rgb(255, 17, 0); /* Match the navbar background color */
 }
