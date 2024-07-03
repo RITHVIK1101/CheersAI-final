@@ -3,14 +3,15 @@ import { format } from 'date-fns';
 import './goals.css';
 
 const Goals = () => {
-  const [givenGoals, setgivenGoals] = useState([
-    
+  const [givenGoals, setGivenGoals] = useState([
     { name: "Host 3 parties for staff", startDate: "2022-01-01", dueDate: "March 13, 2022", description: "Host three parties for staff by the end of the first quarter.", owner: "owner3.jpg", progress: "1 / 3", status: "BEHIND" }
   ]);
 
-  const [currentGoals, setcurrentGoals] = useState([
+  const [currentGoals, setCurrentGoals] = useState([
     { name: "Improve NPS by 23 points", startDate: "2022-01-01", dueDate: "March 13, 2022", description: "Improve Net Promoter Score (NPS) by 23 points by the end of the first quarter.", owner: "owner5.jpg", progress: "14 / 23", status: "ON TRACK" }
   ]);
+
+  const [completedGoals, setCompletedGoals] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newGoal, setNewGoal] = useState({ name: '', startDate: '', endDate: '', description: '' });
@@ -32,12 +33,21 @@ const Goals = () => {
       progress: "0% / 100%",
       status: "ON TRACK"
     };
-    setcurrentGoals([...currentGoals, newGoalObj]);
+    setCurrentGoals([...currentGoals, newGoalObj]);
     setIsModalOpen(false);
     setNewGoal({ name: '', startDate: '', endDate: '', description: '' });
   };
 
-  const renderGoals = (goals) => {
+  const completeGoal = (goal, category) => {
+    setCompletedGoals([...completedGoals, goal]);
+    if (category === 'given') {
+      setGivenGoals(givenGoals.filter(g => g !== goal));
+    } else if (category === 'current') {
+      setCurrentGoals(currentGoals.filter(g => g !== goal));
+    }
+  };
+
+  const renderGoals = (goals, category) => {
     return goals.map((goal, index) => (
       <div
         key={index}
@@ -50,6 +60,7 @@ const Goals = () => {
         <span className="goal-owner"><img src={goal.owner} alt="Owner" /></span>
         <span className="goal-progress">{goal.progress}</span>
         <span className={`goal-status ${goal.status.replace(' ', '-').toLowerCase()}`}>{goal.status}</span>
+        <button onClick={() => completeGoal(goal, category)}>Complete Goal</button>
         {hoveredGoal === goal && (
           <div className="goal-popup">
             <p><strong>Name:</strong> {goal.name}</p>
@@ -85,13 +96,19 @@ const Goals = () => {
             <div className="goal-category">
               <h2>Given goals</h2>
               <div className="goal-card">
-                {renderGoals(givenGoals)}
+                {renderGoals(givenGoals, 'given')}
               </div>
             </div>
             <div className="goal-category">
               <h2>Current goals</h2>
               <div className="goal-card">
-                {renderGoals(currentGoals)}
+                {renderGoals(currentGoals, 'current')}
+              </div>
+            </div>
+            <div className="goal-category">
+              <h2>Completed goals</h2>
+              <div className="goal-card">
+                {renderGoals(completedGoals, 'completed')}
               </div>
             </div>
           </div>

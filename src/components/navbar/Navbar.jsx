@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Layout, theme } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { Routes, Route, Link } from 'react-router-dom';
 import Logo from './Logo';
 import MenuList from './MenuList';
 import './Navbar.css';
-import { ChatCall } from '../../containers';
-import { Calendar } from '../../containers'; 
-import {Goals} from '../../containers'
+import Calendar from '../../containers/calendar/Calender'; // Fix the path here
+import Goals from '../../containers/goals/Goals'; // Fix the path here
+
 const { Header, Sider, Content } = Layout;
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
         collapsible
         trigger={null}
         theme="dark"
-        width={300} // Set the width when expanded
+        width={300}
         className={`navbar__container ${collapsed ? 'collapsed' : ''}`}
       >
         <div className="header-row">
@@ -47,17 +48,24 @@ const Navbar = () => {
             <Logo className="logo-con" />
           </div>
         </div>
-        <MenuList className="menu-bar" />
+        <MenuList className="menu-bar">
+          <Link to="/goals">Goals</Link>
+          <Link to="/calendar">Calendar</Link>
+        </MenuList>
       </Sider>
       <Layout>
-        <Content style={{ margin: '0px 0px 0 1px', overflow: 'initial', backgroundColor: ""}}>
+        <Content style={{ margin: '0px 0px 0 1px', overflow: 'initial', backgroundColor: "" }}>
           <div className="navbar__content_styles">
-            <Goals/>
+            <Routes>
+              <Route path="/" element={<Calendar />} /> {/* Set Calendar as the default route */}
+              <Route path="/goals" element={<Goals />} />
+              <Route path="/calendar" element={<Calendar />} />
+            </Routes>
           </div>
         </Content>
       </Layout>
     </Layout>
   );
-}; 
+};
 
 export default Navbar;

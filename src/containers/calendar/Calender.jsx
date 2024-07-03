@@ -11,13 +11,13 @@ import clock from '../../assets/clockBlack.png';
 
 function Calendar() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [showPopup, setShowPopup] = useState(false); // State for controlling popup visibility
-  const [showCalendar, setShowCalendar] = useState(false); // State for controlling calendar visibility
-  const [popupDate, setPopupDate] = useState(new Date()); // State for date in the popup
-  const [startTime, setStartTime] = useState("00:00"); // State for start time in the popup
-  const [endTime, setEndTime] = useState("23:59"); // State for end time in the popup
-  const [events, setEvents] = useState([]); // State for calendar events
-  const [eventPopup, setEventPopup] = useState(null); // State for event popup visibility and position
+  const [showPopup, setShowPopup] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [popupDate, setPopupDate] = useState(new Date());
+  const [startTime, setStartTime] = useState("00:00");
+  const [endTime, setEndTime] = useState("23:59");
+  const [events, setEvents] = useState([]);
+  const [eventPopup, setEventPopup] = useState(null);
   const calendarRef = useRef(null);
 
   const handleDateChange = (date) => {
@@ -31,17 +31,17 @@ function Calendar() {
   };
 
   const handleCircleClick = () => {
-    setPopupDate(selectedDate); // Set popup date initially to selectedDate
+    setPopupDate(selectedDate);
     setShowPopup(true);
   };
 
   const handlePopupDateClick = () => {
-    setShowCalendar(!showCalendar); // Toggle calendar visibility
+    setShowCalendar(!showCalendar);
   };
 
   const handlePopupDateChange = (date) => {
     setPopupDate(date);
-    setShowCalendar(false); // Hide calendar after date selection
+    setShowCalendar(false);
   };
 
   const closePopup = () => {
@@ -50,10 +50,10 @@ function Calendar() {
 
   const addEvent = () => {
     const newEvent = {
-      title: "Session", // You can customize this
+      title: "Session",
       start: `${popupDate.toISOString().split('T')[0]}T${startTime}:00`,
       end: `${popupDate.toISOString().split('T')[0]}T${endTime}:00`,
-      id: new Date().getTime() // Unique ID for the event
+      id: new Date().getTime()
     };
     setEvents([...events, newEvent]);
     setShowPopup(false);
@@ -79,8 +79,8 @@ function Calendar() {
 
   const handleEventClick = (arg) => {
     const { pageX, pageY } = arg.jsEvent;
-    const offsetX = -400; // Adjust horizontal offset as needed
-    const offsetY = 20; // Adjust vertical offset as needed
+    const offsetX = -400;
+    const offsetY = 20;
     setEventPopup({
       id: arg.event.id,
       title: arg.event.title,
