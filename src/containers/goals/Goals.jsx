@@ -1,26 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { format } from 'date-fns';
 import './goals.css';
 
 const Goals = () => {
-  const organizationalGoals = [
-    { name: "Increase Sales revenue: $950k in Q1", dueDate: "March 13, 2022", owner: "owner1.jpg", progress: "$427,303 / $950,000", status: "ON TRACK" },
-    { name: "Launch a new goal setting feature by Spring", dueDate: "March 13, 2022", owner: "owner2.jpg", progress: "50% / 100%", status: "ON TRACK" },
-    { name: "Host 3 parties for staff", dueDate: "March 13, 2022", owner: "owner3.jpg", progress: "1 / 3", status: "BEHIND" }
-  ];
+  const [givenGoals, setgivenGoals] = useState([
+    
+    { name: "Host 3 parties for staff", startDate: "2022-01-01", dueDate: "March 13, 2022", description: "Host three parties for staff by the end of the first quarter.", owner: "owner3.jpg", progress: "1 / 3", status: "BEHIND" }
+  ]);
 
-  const departmentalGoals = [
-    { name: "Improve CSAT by 10%", dueDate: "March 13, 2022", owner: "owner4.jpg", progress: "8% / 10%", status: "ON TRACK" },
-    { name: "Improve NPS by 23 points", dueDate: "March 13, 2022", owner: "owner5.jpg", progress: "14 / 23", status: "ON TRACK" }
-  ];
+  const [currentGoals, setcurrentGoals] = useState([
+    { name: "Improve NPS by 23 points", startDate: "2022-01-01", dueDate: "March 13, 2022", description: "Improve Net Promoter Score (NPS) by 23 points by the end of the first quarter.", owner: "owner5.jpg", progress: "14 / 23", status: "ON TRACK" }
+  ]);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newGoal, setNewGoal] = useState({ name: '', startDate: '', endDate: '', description: '' });
+  const [hoveredGoal, setHoveredGoal] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewGoal({ ...newGoal, [name]: value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const newGoalObj = {
+      name: newGoal.name,
+      startDate: newGoal.startDate,
+      dueDate: format(new Date(newGoal.endDate), 'MMMM dd, yyyy'),
+      description: newGoal.description,
+      owner: "owner6.jpg", // Add the appropriate owner image
+      progress: "0% / 100%",
+      status: "ON TRACK"
+    };
+    setcurrentGoals([...currentGoals, newGoalObj]);
+    setIsModalOpen(false);
+    setNewGoal({ name: '', startDate: '', endDate: '', description: '' });
+  };
 
   const renderGoals = (goals) => {
     return goals.map((goal, index) => (
-      <div key={index} className="goal-item">
+      <div
+        key={index}
+        className="goal-item"
+        onMouseEnter={() => setHoveredGoal(goal)}
+        onMouseLeave={() => setHoveredGoal(null)}
+      >
         <span className="goal-name">{goal.name}</span>
         <span className="goal-due-date">{goal.dueDate}</span>
         <span className="goal-owner"><img src={goal.owner} alt="Owner" /></span>
         <span className="goal-progress">{goal.progress}</span>
         <span className={`goal-status ${goal.status.replace(' ', '-').toLowerCase()}`}>{goal.status}</span>
+        {hoveredGoal === goal && (
+          <div className="goal-popup">
+            <p><strong>Name:</strong> {goal.name}</p>
+            <p><strong>Start Date:</strong> {format(new Date(goal.startDate), 'MMMM dd, yyyy')}</p>
+            <p><strong>End Date:</strong> {goal.dueDate}</p>
+            <p><strong>Description:</strong> {goal.description}</p>
+          </div>
+        )}
       </div>
     ));
   };
@@ -32,7 +69,7 @@ const Goals = () => {
           <input type="text" placeholder="Search employees" className="search-input" />
           <div className="header-icons">
             <button className="filter-btn">Filter</button>
-            <button className="create-goal-btn">+ Create a goal</button>
+            <button className="create-goal-btn" onClick={() => setIsModalOpen(true)}>+ Create a goal</button>
             <div className="profile-pic"></div>
           </div>
         </header>
@@ -46,20 +83,48 @@ const Goals = () => {
           </div>
           <div className="goals-content">
             <div className="goal-category">
-              <h2>Organizational</h2>
+              <h2>Given goals</h2>
               <div className="goal-card">
-                {renderGoals(organizationalGoals)}
+                {renderGoals(givenGoals)}
               </div>
             </div>
             <div className="goal-category">
-              <h2>Departmental</h2>
+              <h2>Current goals</h2>
               <div className="goal-card">
-                {renderGoals(departmentalGoals)}
+                {renderGoals(currentGoals)}
               </div>
             </div>
           </div>
         </section>
       </main>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Create a New Goal</h2>
+            <form onSubmit={handleFormSubmit}>
+              <label>
+                Goal Name:
+                <input type="text" name="name" value={newGoal.name} onChange={handleInputChange} required />
+              </label>
+              <label>
+                Start Date:
+                <input type="date" name="startDate" value={newGoal.startDate} onChange={handleInputChange} required />
+              </label>
+              <label>
+                End Date:
+                <input type="date" name="endDate" value={newGoal.endDate} onChange={handleInputChange} required />
+              </label>
+              <label>
+                Description:
+                <textarea name="description" value={newGoal.description} onChange={handleInputChange} required></textarea>
+              </label>
+              <button type="submit">Save Goal</button>
+              <button type="button" onClick={() => setIsModalOpen(false)}>Cancel</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
