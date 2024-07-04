@@ -49,10 +49,6 @@
   background-color: transparent !important;
 }
 
-/* Custom styling for selected menu item icons */
-.menu-bar .ant-menu-item-selected .anticon {
-  color: #6c72ff; /* Set icon color for selected item */
-}
 
 
 .logo__container {
