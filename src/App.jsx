@@ -1,22 +1,23 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Header, ProductSlide, Product, ProductSteps, Uses, Contact, Questions } from './containers';
-import { Bottom, Navbar } from './components';
+import { Navbar } from './components';
 import Goals from './containers/goals/Goals';
-import Calendar from './containers/calendar/Calender'; // Fix the path here
+import Calendar from './containers/calendar/Calender';
+import ChatCall from './containers/chatCall/ChatCall';
 import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <div className="app-container">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Calendar />} /> {/* Set Calendar as the default route */}
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/calendar" element={<Calendar />} />
-          {/* Add other routes as needed */}
-        </Routes>
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<ChatCall />} />
+            <Route path="/goals" element={<Goals />} />
+            <Route path="/calendar" element={<Calendar />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

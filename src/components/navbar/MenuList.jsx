@@ -8,7 +8,7 @@ import {
   AreaChartOutlined,
   SettingOutlined,
   BarsOutlined,
-  CalendarOutlined, // Example of different icon for Exercises
+  CalendarOutlined,
 } from '@ant-design/icons';
 
 const MenuList = () => {
@@ -34,6 +34,6 @@ const MenuList = () => {
       </Menu.Item>
     </Menu>
   );
-}
+};
 
 export default MenuList;

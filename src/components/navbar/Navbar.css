@@ -1,131 +1,85 @@
 /* Navbar container styling */
 .navbar__container {
-    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
-    color: #fff; /* Text color set to white */
-    height: 100vh; /* Make the navbar take the full height of the viewport */
-    transition: width 0.3s; /* Smooth transition for the width */
+  background-color: rgb(169, 221, 242); /* Specific color for the navbar */
+  height: 65vh; /* Initial height when collapsed */
+  transition: width 0.3s, height 0.3s, margin-top 0.3s; /* Smooth transition for width, height, and margin-top */
+  margin-top: 8rem; /* Margin at the top when collapsed */
+  
+}
+
+.navbar__container.collapsed {
+  width: 80px; /* Adjust width as needed */
+  height: 65vh; /* Shorter height when collapsed */
+  margin-top: 8rem; /* Keep the margin when collapsed */
+  border-radius: 15px;
+}
+
+.navbar__container:hover {
+  width: 300px; /* Expand width on hover */
+  height: 100vh; /* Full height when expanded */
+  margin-top: 0; /* Remove the margin when expanded */
 }
 
 /* Menu bar styling */
 .menu-bar {
-    background-color: rgb(16, 35, 119); /* Specific color for the navbar */
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 1rem;
-    position: relative;
-    color: white;
+  background-color: rgb(255, 255, 255); /* Specific color for the navbar */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  position: relative;
+  color: rgb(7, 1, 1);
 }
 
 /* Additional styling for menu items to ensure text color is white */
-.menu-bar .ant-menu-item, 
+.menu-bar .ant-menu-item,
 .menu-bar .ant-menu-submenu-title {
-    color: #fff; /* Set text color to white */
+  color: #0a0000; /* Set text color */
 }
 
 /* Additional styling for menu icons to ensure they inherit the correct color */
-.menu-bar .ant-menu-item .anticon, 
+.menu-bar .ant-menu-item .anticon,
 .menu-bar .ant-menu-submenu-title .anticon {
-    color: #fff; /* Set icon color to white */
+  color: #080101; /* Set icon color */
 }
 
 /* Custom styling for selected menu item */
 .menu-bar .ant-menu-item-selected {
-    color: #6c72ff; /* Set text color for selected item */
-    background-color: transparent !important; 
+  color: #6c72ff; /* Set text color for selected item */
+  background-color: transparent !important;
 }
 
 /* Custom styling for selected menu item icons */
 .menu-bar .ant-menu-item-selected .anticon {
-    color: #6c72ff; /* Set icon color for selected item */
+  color: #6c72ff; /* Set icon color for selected item */
 }
 
-/* Toggle button styling */
-.toggle-theme-button {
-    position: relative;
-    padding-top: 100%;
-    left: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-}
-
-/* Icon color for dark theme */
-.dark-icon {
-    color: #fff; /* White color for dark theme */
-}
-
-/* Additional toggle button styling */
-.toggle {
-    margin-left: 15px;
-    color: #fff; /* Ensure the toggle button text is white */
-}
-
-/* Styling for the collapsed state */
-.navbar__container.collapsed {
-    width: 80px; /* Adjust width as needed */
-}
-
-.navbar__container.collapsed .ant-menu-item .anticon,
-.navbar__container.collapsed .ant-menu-submenu-title .anticon {
-    display: block; /* Show icons when collapsed */
-}
-
-.navbar__container.collapsed .ant-menu-item .ant-menu-title-content,
-.navbar__container.collapsed .ant-menu-submenu-title .ant-menu-title-content {
-    display: none; /* Hide text when collapsed */
-}
-
-.navbar__container:hover {
-    width: 300px; /* Expand width on hover */
-}
 
 .logo__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .logo-expanded {
-    display: flex;
-    align-items: center;
-    padding-top: 22px;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
 }
 
 .logo-text {
-    font-family: 'YourChosenFont', sans-serif; /* Use your chosen font */
-    font-size: 24px;
-    color: white;
-    padding-top: 30px;
+  font-family: 'YourChosenFont', sans-serif; /* Use your chosen font */
+  font-size: 24px;
+  color: rgb(10, 1, 1);
+  padding-top: 1rem;
 }
 
 .navbar__container.collapsed .logo__container {
-    margin-top: 50px; /* Adjust this value to move the heart icon down */
-}
-
-.menu-bar .ant-menu-item:hover .ant-menu-title-content, 
-.menu-bar .ant-menu-submenu-title:hover .ant-menu-title-content {
-    background-color: white; /* Change the background color on hover */
-    border-radius: 15px; /* Curved corners */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for depth */
-    padding: 10px; /* Optional: Add padding to center the text */
-}
-
-/* Custom styling for selected menu item in collapsed state */
-.navbar__container.collapsed .ant-menu-item-selected,
-.navbar__container.collapsed .ant-menu-submenu-title-selected {
-    background-color: white; /* White background for selected item */
-    border-radius: 8px; /* Rounded corners */
-    margin: 0 8px; /* Margin to adjust the spacing */
-    display: flex; /* Flexbox to center icon */
-    justify-content: center; /* Center icon horizontally */
-    align-items: center; /* Center icon vertically */
+  margin-top: 0.4rem; /* Adjust this value to move the heart icon down */
 }
 
 .navbar__container.collapsed .ant-menu-item-selected .anticon,
 .navbar__container.collapsed .ant-menu-submenu-title-selected .anticon {
-    color: rgb(255, 17, 0); /* Match the navbar background color */
+  color: rgb(128, 47, 241); /* Match the navbar background color */
 }
